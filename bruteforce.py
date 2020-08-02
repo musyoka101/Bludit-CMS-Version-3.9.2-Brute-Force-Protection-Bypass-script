@@ -38,7 +38,7 @@ try:
 				print('Use {u}:{p} to login.'.format(u = username, p = password))
 				print()
 				break
-except:
+except IndexError:
 	print()
 	print("USAGE:\n\npython3 bruteforce.py <IP address> <username> <wordlist>")
 	print()
