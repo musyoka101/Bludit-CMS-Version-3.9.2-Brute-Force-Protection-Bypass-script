@@ -8,9 +8,9 @@ try:
 	login_url = host + '/admin/login'
 	username = sys.argv[2]
 	fname = sys.argv[3]
-	with open(fname) as f:
+	with open(fname, 'rb') as f:
 		content = f.readlines()
-		wordlist = [x.strip() for x in content]
+		wordlist = [x.decode('utf-8', 'backslashreplace').strip() for x in content]
 	for password in wordlist:
 		session = requests.Session()
 		login_page = session.get(login_url)
